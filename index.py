@@ -13,6 +13,9 @@ from pathlib import Path
 from PyQt5.uic import loadUiType
 import urllib.request
 
+import Security_Voice_code_Access
+
+
 ui, _ = loadUiType('main.ui')
 
 
