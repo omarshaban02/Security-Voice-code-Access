@@ -51,3 +51,26 @@ mfcc_features = extract_mfcc_features(your_audio, your_fs)
 
 # Concatenate both sets of features
 all_features = np.concatenate([spectrogram_features, mfcc_features])
+
+'''
+Features
+* mfcc
+* mean 
+* std
+* chroma
+* tempo
+* spectral_contrast
+--------------
+1. Regression
+Equation: Cosine Similarity
+*****
+Suggested Models:
+KNN Regression
+Random Forest Regression
+Polynomial Regression
+--------------
+2. 3 models Classification
+*****
+Suggested Models:
+Naive Bayes
+'''
