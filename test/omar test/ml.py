@@ -61,8 +61,8 @@ Features
 * tempo
 * spectral_contrast
 --------------
-1. Regression
 Equation: Cosine Similarity
+1. Regression
 *****
 Suggested Models:
 KNN Regression

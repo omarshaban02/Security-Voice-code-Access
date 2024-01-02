@@ -45,7 +45,7 @@ def main():
 
     # Paths to two voice recordings in WAV format
     voice1_data, voice1_sr = librosa.load('D:/CUFE/SBE/3rd/1st term/DSP/task5/test/recorder/unlock2.wav')
-    voice2_data, voice2_sr = record_audio(duration=4, filename="not_omar2.wav")
+    voice2_data, voice2_sr = record_audio(duration=4, filename="open_test.wav")
 
     # print(voice1_data.shape, voice2_data)
     voice2_data = voice2_data.reshape(voice2_data.shape[0])

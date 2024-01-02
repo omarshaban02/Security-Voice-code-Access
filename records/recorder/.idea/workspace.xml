@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6c64bb0-02f0-492b-b8ca-a4e1d1bd8860" name="Changes" comment="recorder function add to records folder" />
+    <list default="true" id="b6c64bb0-02f0-492b-b8ca-a4e1d1bd8860" name="Changes" comment="recorder function add to records folder">
+      <change afterPath="$PROJECT_DIR$/../../test/omar test/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/omar test/fingerprint_modified.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test/omar test/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/omar test/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test/omar test/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/omar test/ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test/omar test/spectro.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/omar test/fingerprint.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,16 +34,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="recorder" />
