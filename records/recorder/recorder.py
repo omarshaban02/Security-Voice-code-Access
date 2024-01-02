@@ -7,6 +7,7 @@ def record_audio(duration=10, filename="recording.wav"):
   Records audio for `duration` seconds and saves it to `filename`.
   """
     fs = 44100  # Sampling rate
+    print("start")
     recording = sd.rec(duration * fs, samplerate=fs, channels=2)
     sd.wait()
     wv.write(filename, recording, fs, sampwidth=2)
