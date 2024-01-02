@@ -11,6 +11,4 @@ from recorder import record_audio
 
 # Don't forget change this number after each record
 
-record_audio(4, "./<Your name>/open_middle_door/<Your name>_open<no 1 - 40>.wav")
-# record_audio(4, "./<Your name>/grant_me_access/<Your name>_grant<no 1 - 40>.wav")
-# record_audio(4, "./<Your name>/unlock_the_gate/<Your name>_unlock<no 1 - 40>.wav")
+record_audio(4, "../Abdulrahman/open_middle_door/Abdulrahman_grant30.wav")
