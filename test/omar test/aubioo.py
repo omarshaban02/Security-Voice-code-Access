@@ -47,9 +47,12 @@ def compare_audio_similarity(file1, file2):
     return similarity_score
 
 
+asg_grant_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Abdulrahman/grant_me_access/"
+asg_open_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Abdulrahman/open_middle_door/"
+asg_unlock_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Abdulrahman/unlock_the_gate/"
 # Example usage
-file_path1 = "open2.wav"
-file_path2 = "unlock2.wav"
+file_path1 = asg_grant_folder + "Abdulrahman_grant1.wav"
+file_path2 = asg_unlock_folder + "Abdulrahman_unlock5.wav"
 
 similarity_score = compare_audio_similarity(file_path1, file_path2)
 print(f"Similarity Score: {similarity_score:.2f}")

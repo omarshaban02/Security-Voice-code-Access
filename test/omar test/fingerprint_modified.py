@@ -66,16 +66,35 @@ class AudioFingerprint:
         self.add_fingerprints(fingerprints)
 
 
-# Example Usage
-file_path_saved = 'open1.wav'
-file_path_input = 'unlock2.wav'
-saved_song_id = 1
+asg_grant_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Abdulrahman/grant_me_access/"
+asg_open_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Abdulrahman/open_middle_door/"
+asg_unlock_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Abdulrahman/unlock_the_gate/"
 
-audio_fingerprint_saved = AudioFingerprint(saved_song_id, file_path_saved)
-rate_input, audio_data_input = audio_fingerprint_saved.read_audio(file_path_input)
-similarity_scores = audio_fingerprint_saved.compare_with_saved_fingerprints(audio_data_input)
+omar_open_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Omar/open_middle_door/"
+# omar_grant_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Omar/grant_me_access/"
+# omar_unlock_folder = "D:/CUFE/SBE/3rd/1st term/DSP/task5/Security-Voice-code-Access/records/Omar/unlock_the_gate/"
 
-percentage_similarity, jaccard_similarity = audio_fingerprint_saved.calculate_jaccard_similarity(similarity_scores,
-                                                                             audio_fingerprint_saved.fingerprints)
-print(f"Jaccard Similarity: {jaccard_similarity}")
-print(f"Percentage Similarity: {percentage_similarity}%")
+x = []
+
+for i in range(1, 21):
+
+    # Example usage
+    # file_path_saved = omar_open_folder + f"Omar_open{i + 7}.wav"
+    file_path_saved = asg_grant_folder + f"Abdulrahman_grant{i + 7}.wav"
+    # file_path_input = omar_open_folder + f"Omar_open{i}.wav"
+    file_path_input = asg_grant_folder + f"Abdulrahman_grant{i}.wav"
+    # file_path_input = "unlock2.wav"
+    saved_song_id = i
+
+    audio_fingerprint_saved = AudioFingerprint(saved_song_id, file_path_saved)
+    rate_input, audio_data_input = audio_fingerprint_saved.read_audio(file_path_input)
+    similarity_scores = audio_fingerprint_saved.compare_with_saved_fingerprints(audio_data_input)
+
+    percentage_similarity, jaccard_similarity = audio_fingerprint_saved.calculate_jaccard_similarity(similarity_scores,
+                                                                                                         audio_fingerprint_saved.fingerprints)
+    x.append(percentage_similarity)
+    # print(f"Jaccard Similarity: {jaccard_similarity}")
+    # print(f"Percentage Similarity: {percentage_similarity}%")
+
+print(x)
+print(np.mean(x))
