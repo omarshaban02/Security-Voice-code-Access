@@ -6,22 +6,41 @@ from scipy.signal import convolve2d
 
 # Load audio files
 audio_file = 'unlock1.wav'
-audio_file2 = 'open2.wav'
-y, sr = librosa.load(audio_file, sr=None)
-y2, sr2 = librosa.load(audio_file2, sr=None)
+# audio_file2 = 'unlock2.wav'
+audio_file2 = 'open1.wav'
+y, sr = librosa.load(audio_file, sr=44100)
+y2, sr2 = librosa.load(audio_file2, sr=44100)
 
-y_normalized = librosa.util.normalize(y)
-y_normalized2 = librosa.util.normalize(y2)
+# Test some things to enhance
+y = librosa.util.normalize(y)
+y2 = librosa.util.normalize(y2)
+
+y = np.convolve(y, np.ones((100,))/100, mode='valid')
+y2 = np.convolve(y2, np.ones((100,))/100, mode='valid')
+
+y = librosa.effects.pitch_shift(y, sr=sr, n_steps=2)
+y2 = librosa.effects.pitch_shift(y2, sr=sr2, n_steps=2)
+
+y = librosa.effects.preemphasis(y)
+y2 = librosa.effects.preemphasis(y2)
+
+y, index = librosa.effects.trim(y)
+y2, index2 = librosa.effects.trim(y2)
 
 
 # Calculate MFCCs and delta coefficients
-mfccs = librosa.feature.mfcc(y=y_normalized, sr=sr, n_mfcc=13)
+mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
 delta_mfccs = librosa.feature.delta(mfccs)
-combined_mfccs = np.concatenate((mfccs, delta_mfccs), axis=0)
+delta2_mfccs = librosa.feature.delta(mfccs, order=2)
+combined_mfccs = np.concatenate((mfccs, delta_mfccs, delta2_mfccs))
 
-mfccs2 = librosa.feature.mfcc(y=y_normalized2, sr=sr2, n_mfcc=13)
+mfccs2 = librosa.feature.mfcc(y=y2, sr=sr2, n_mfcc=13)
 delta_mfccs2 = librosa.feature.delta(mfccs2)
-combined_mfccs2 = np.concatenate((mfccs2, delta_mfccs2), axis=0)
+delta2_mfccs2 = librosa.feature.delta(mfccs2, order=2)
+combined_mfccs2 = np.concatenate((mfccs2, delta_mfccs2, delta2_mfccs2))
+
+print(combined_mfccs.shape)
+print(combined_mfccs2.shape)
 
 # Display the combined MFCCs
 librosa.display.specshow(combined_mfccs, x_axis='time')
@@ -48,10 +67,10 @@ max_convolution_index = np.unravel_index(np.argmax(convolution_result), convolut
 shifted_mfccs2 = np.roll(combined_mfccs2, max_convolution_index, axis=(0, 1))
 
 # Calculate similarity score based on the shifted signal
-similarity_score = np.corrcoef(combined_mfccs.flatten(), shifted_mfccs2.flatten())[0, 1]
+similarity_score2 = np.corrcoef(combined_mfccs.flatten(), shifted_mfccs2.flatten())[0, 1]
 
 # Print the similarity score
-print(f"2D Convolution Similarity Score: {similarity_score * 100:.2f}%")
+print(f"2D Convolution Similarity Score: {similarity_score2 * 100:.2f}%")
 
 #
 #
