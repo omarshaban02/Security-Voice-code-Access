@@ -63,8 +63,8 @@ pip install -r requirements.txt
 1. Click the `Record` button to start recording sound.
 2. The application will process the sound and display the spectrogram.
 
-![Record](assets/record.png)
-![Loading](assets/loading.png)
+<img src="assets/record.png" alt="Record" width="500"/> <img src="assets/loading.png" alt="Loading" width="500"/>
+
 
 ### Analyzing Spectrogram
 
@@ -76,8 +76,8 @@ pip install -r requirements.txt
 1. The application uses pre-trained models to predict if the person and word match the authorized ones.
 2. The result is displayed as "The Door is opened" or "The Door is closed" based on the prediction.
 
-![Closed](assets/closed.png)
-![Opened](assets/opened.png)
+<img src="assets/closed.png" alt="Closed" width="500"/> <img src="assets/opened.png" alt="Opened" width="500"/>
+
 
 ## Plot Descriptions
 
