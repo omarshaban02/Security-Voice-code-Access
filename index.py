@@ -89,10 +89,10 @@ class MainApp(QMainWindow, ui):
         self.spectrogram_graphics_view.setLayout(self.graphics_view_layout2)
 
         self.sound = Sound()
-        self.word_model = Model("w_model_svc_z.pkl")
+        self.word_model = Model("models/w_model_svc_z.pkl")
         self.word_model.p_w_state = 'w'
 
-        self.person_model = Model("p_model_svc.pkl")
+        self.person_model = Model("models/p_model_svc.pkl")
         self.person_model.p_w_state = 'p'
 
         self.p_accessed = False
